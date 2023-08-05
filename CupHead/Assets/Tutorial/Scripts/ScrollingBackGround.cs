@@ -12,28 +12,19 @@ public class ScrollingBackGround : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (true)//GameManager.instance.isGameover == false)
+      /*  if (PlayerController.instance.hor == 1)
         {
-            xInput = Input.GetAxisRaw("Horizontal");
-
-            
-            if (true)//!GameManager.instance.isGameover)
-            {
-                if (xInput == 1)
-                {
-                    transform.Translate(Vector2.left * speed * Time.deltaTime);
-                }
-                if (xInput == -1)
-                {
-                    transform.Translate(Vector2.right * speed * Time.deltaTime);
-                }
-            }
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
+        if (PlayerController.instance.hor == -1)
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }*/
     }
 }

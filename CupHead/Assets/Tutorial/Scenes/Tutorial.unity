@@ -123,6 +123,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &590792067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1539560438459555240, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
+  m_PrefabInstance: {fileID: 1539560438674289632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &590792073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590792067}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fecadbc171ec8f42ac16afe9daa1bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: 0
+  hor: 0
+  ver: 0
+  isDash: 0
+  isAim: 0
+  isAttack: 0
+  isUltimate: 0
+  isJump: 0
+--- !u!114 &590792074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590792067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b41b456558dab4bb1fc2bef21fa690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpClip: {fileID: 0}
+  DeathClip: {fileID: 0}
+--- !u!114 &590792076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590792067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b48d81dac35b66847a4ba8d0af231757, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: PC
+  m_DefaultActionMap: PlayerActions
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1378910626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1539560438389376287, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
@@ -321,61 +390,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1539560438459555242, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539560438459555242, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.64
+      objectReference: {fileID: 0}
     - target: {fileID: 1539560438459555243, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
       propertyPath: m_Constraints
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
-      value: 4757cf38-abb0-4517-bf7c-fe2fc6f26065
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
-      value: fc5145e8-a9c3-41f1-9eca-941f2b9c6f83
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
-      value: 1faea651-e459-4fe4-8111-01336ee7f3ee
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
-      value: PlayerActions/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
-      value: PlayerActions/Jump[/Keyboard/z]
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
-      value: PlayerActions/Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 102900000, guid: 70615243e2be4a81afaab9bf5d273d65, type: 3}
-    - target: {fileID: 1539560438459555247, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4086192319634038174, guid: 20dcb9eafb43f93488d94f2fee030df6, type: 3}
       propertyPath: m_RootOrder

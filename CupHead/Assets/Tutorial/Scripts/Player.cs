@@ -4,23 +4,25 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     public static Player instance;
     public AudioClip JumpClip;
     public AudioClip DeathClip;
-    private float jumpForce = 0f;
+    private float jumpForce = 5f;
     private int life = 3;
-    private int DashCount 
-
-    private bool isGrounded = false;
+    private int DashCount = 1;
+    private float speed = 5f;
     private bool isDead = false;
-
+    private bool isGround = false;
+    private Vector2 moveDirection;
     private SpriteRenderer playerRenderer;
     private Rigidbody2D playerRigidbody;
     private Animator animator;
     private AudioSource playerAudio;
+    private int previousDirection = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,19 +35,41 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isDead)
+        if (isDead)
         {
             return;
         }
-
-        if (PlayerConroller.instance.hor == -1)
-        {
-            playerRigidbody.velocity = vector2(-1,)
-        }
-
        
+
     }
 
+    private void FixedUpdate()
+    {
+        bool hasControl = (moveDirection != Vector2.zero);
+        if (hasControl)
+        {
+            transform.Translate(moveDirection * speed * Time.deltaTime);
+        }
+
+        if (moveDirection.x >= 0)
+        {
+            animator.SetBool("run", true);
+            playerRenderer.flipX = false;
+
+        }
+        else if (moveDirection.x <= 0)
+        {
+            animator.SetBool("run", true);
+            playerRenderer.flipX = true;
+        }
+        else
+        {
+            animator.SetBool("run", false);
+        }
+    }
+
+
+   
     public void Die()
     {
         animator.SetTrigger("Die");
@@ -66,18 +90,9 @@ public class Player : MonoBehaviour
             }            
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnMove(InputValue value)
     {
-        if (collision.contacts[0].normal.y >0.7f)
-        {
-            isGrounded = true;
-        }
+        Vector2 input = value.Get<Vector2>();
+        moveDirection = new Vector2(input.x,input.y);
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isGrounded = false;
-    }
-
 }

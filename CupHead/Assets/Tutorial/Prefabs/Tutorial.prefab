@@ -5848,9 +5848,7 @@ GameObject:
   - component: {fileID: 1539560438459555241}
   - component: {fileID: 1539560438459555243}
   - component: {fileID: 1539560438459555244}
-  - component: {fileID: 1539560438459555245}
   - component: {fileID: 1539560438459555246}
-  - component: {fileID: 1539560438459555247}
   m_Layer: 0
   m_Name: CupHead
   m_TagString: Player
@@ -5962,20 +5960,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.19, y: 1.72}
   m_Direction: 0
---- !u!114 &1539560438459555245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539560438459555240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b41b456558dab4bb1fc2bef21fa690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpClip: {fileID: 0}
-  DeathClip: {fileID: 0}
 --- !u!95 &1539560438459555246
 Animator:
   serializedVersion: 5
@@ -5997,36 +5981,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1539560438459555247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539560438459555240}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 974d9a5889daea24788b92c32ecfde0b, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: PC
-  m_DefaultActionMap: PlayerActions
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1539560438559781941
 GameObject:
   m_ObjectHideFlags: 0
