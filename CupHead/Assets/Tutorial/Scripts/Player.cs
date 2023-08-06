@@ -11,25 +11,40 @@ public class Player : MonoBehaviour
     public static Player instance;
     public AudioClip JumpClip;
     public AudioClip DeathClip;
-    private float jumpForce = 5f;
+
+    public float dirX;
+    //목숨
     private int life = 3;
+    //대시
     private int DashCount = 1;
+    //이동
     private float speed = 5f;
+    //생존상태
     private bool isDead = false;
-    private bool isGround = false;
-    private Vector2 moveDirection;
+    //막힘여부
+    public bool isBlocked = false;
+    //점프 
+    private bool isGround = true;
+    private float jumpForce = 10f;
+    [SerializeField]private Transform pos;
+    [SerializeField]private float Radius;
+    [SerializeField]private LayerMask isLayer;
+    [SerializeField]private int jumpCnt;
+    public int jumpCount;
+
     private SpriteRenderer playerRenderer;
-    private Rigidbody2D playerRigidbody;
+    private Rigidbody2D PR;
     private Animator animator;
     private AudioSource playerAudio;
-    private int previousDirection = 0;
     // Start is called before the first frame update
     void Start()
     {
-        playerRigidbody = GetComponent<Rigidbody2D>();
+        PR = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playerRenderer = GetComponent<SpriteRenderer>();
+        jumpCnt = jumpCount;
+        instance = this;
     }
 
     // Update is called once per frame
@@ -39,43 +54,83 @@ public class Player : MonoBehaviour
         {
             return;
         }
-       
+        isGround = Physics2D.OverlapCircle(pos.position, Radius, isLayer);
+
+        if (isGround == true && Input.GetKeyDown(KeyCode.Z) && jumpCnt > 0)
+        {
+            Debug.Log("들어오니?");
+            animator.SetTrigger("jump");
+            PR.velocity = Vector3.zero;
+            PR.velocity = Vector2.up * jumpForce;
+        }
+        if (isGround == false && Input.GetKeyDown(KeyCode.Z) && jumpCnt > 0)
+        {
+            PR.velocity = Vector2.up * jumpForce;
+        }
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            jumpCnt--;
+        }
+        if (isGround)
+        {
+            jumpCnt = jumpCount;
+        }
+
 
     }
 
     private void FixedUpdate()
     {
-        bool hasControl = (moveDirection != Vector2.zero);
-        if (hasControl)
+        dirX = Input.GetAxis("Horizontal");
+        PR.velocity = new Vector2(dirX * speed, PR.velocity.y);
+        if (dirX > 0)
         {
-            transform.Translate(moveDirection * speed * Time.deltaTime);
-        }
-
-        if (moveDirection.x >= 0)
-        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
             animator.SetBool("run", true);
-            playerRenderer.flipX = false;
-
         }
-        else if (moveDirection.x <= 0)
+        else if (dirX < 0)
         {
+            transform.eulerAngles = new Vector3(0, 180, 0);
             animator.SetBool("run", true);
-            playerRenderer.flipX = true;
         }
         else
         {
             animator.SetBool("run", false);
         }
+
+
+       
+        /*  Debug.LogFormat("{0}", isGround);
+          if (isGround && Input.GetKey(KeyCode.Z))
+          {
+
+
+              //velo = new Vector2(PR.velocity.x, PR.velocity.y);
+              if (isGround == true &&  PR.velocity.y < MaxjumpForce)
+              {
+                  //PR.velocity = velo;
+                  PR.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
+              }
+
+          }
+          if (isGround == false)
+          {
+              animator.SetBool("isGround", false);
+          }
+          if (isGround == true)
+          {
+              animator.SetBool("isGround", true);
+          }*/
+
+
     }
 
-
-   
     public void Die()
     {
         animator.SetTrigger("Die");
         playerAudio.clip = DeathClip;
         playerAudio.Play();
-        playerRigidbody.velocity = Vector2.zero;
+        PR.velocity = Vector2.zero;
         isDead = true;
     }
 
@@ -90,9 +145,19 @@ public class Player : MonoBehaviour
             }            
         }
     }
-    void OnMove(InputValue value)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 input = value.Get<Vector2>();
-        moveDirection = new Vector2(input.x,input.y);
+        if (collision.contacts[0].normal.y < 0.5f)
+        {
+            isBlocked = true;
+        }
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        isBlocked = false;
+
+    }
+
+
 }

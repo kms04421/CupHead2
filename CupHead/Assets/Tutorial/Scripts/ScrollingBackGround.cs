@@ -18,13 +18,18 @@ public class ScrollingBackGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      /*  if (PlayerController.instance.hor == 1)
+
+        if (Player.instance.isBlocked == false)
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            if (Player.instance.dirX > 0)
+            {
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
+            }
+            if (Player.instance.dirX < 0)
+            {
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+            }
         }
-        if (PlayerController.instance.hor == -1)
-        {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-        }*/
+     
     }
 }
