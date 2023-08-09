@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Boss
+  - PinkBossAtk
+  - Test
+  - BossAtk
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -38,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 2337226507
+    locked: 0
   - name: World
     uniqueID: 3675744821
     locked: 0
@@ -47,6 +55,12 @@ TagManager:
   - name: Island
     uniqueID: 1714102309
     locked: 0
-  - name: ' Structure'
+  - name: Structure
     uniqueID: 2694489227
+    locked: 0
+  - name: New Layer 5
+    uniqueID: 3756096437
+    locked: 0
+  - name: BcakGround_Front
+    uniqueID: 282975719
     locked: 0
