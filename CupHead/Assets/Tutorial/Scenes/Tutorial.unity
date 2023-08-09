@@ -3188,15 +3188,13 @@ MonoBehaviour:
   isDash: 0
   isDashing: 0
   isAttack: 0
-  MaxDistance: 0.7
+  MaxDistance: 0.6
   foot: {fileID: 1791393313}
-  pos: {fileID: 794611077}
-  Radius: 1
-  isLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  jumpCnt: 0
   jumpCount: 2
+  waypoints: []
+  pathType: 0
+  pathMode: 0
+  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &614949496
 GameObject:
   m_ObjectHideFlags: 0

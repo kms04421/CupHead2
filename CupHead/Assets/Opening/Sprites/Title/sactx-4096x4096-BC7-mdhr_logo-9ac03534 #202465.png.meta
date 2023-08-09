@@ -1,0 +1,599 @@
+fileFormatVersion: 2
+guid: 45755f9e64efdeb43941b8fab19104ee
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3486
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0bb4730d5470d84993d7fc8b00e702f
+      internalID: -207799598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_1
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 3486
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e570c34b95223ba4d9d8384787ee5586
+      internalID: 920218830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2906
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020e8cb0966358f4bbecb2c147ae7fff
+      internalID: 1004276674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_3
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2906
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a8d1ed51fdb7349bf2e1aec32f3afd
+      internalID: 1769322169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_4
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2906
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0689d12f6d34c74db722c73b00c1e9f
+      internalID: -1754987927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2326
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e64cac7fe57d94495198f5c7bd6051
+      internalID: 1047328458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_6
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2326
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e605252570cd94488fcc8f05cb3ef97
+      internalID: -1426933916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_7
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 2326
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e388e78621106124aa116d06066f28e7
+      internalID: 1677553622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1746
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d728c60ffc96ac5498f08c90a6f90452
+      internalID: 1021980225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_9
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1746
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1cfa4ef5e0be74e9aa687c64bf9f80
+      internalID: 2013833174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_10
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1746
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e83aac59efba942995dc4af914e7e6
+      internalID: -1344903558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1166
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8dfdf67ff6cea54c8d4ef13cea4fb58
+      internalID: 1790954604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_12
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1166
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf564a2083628d84d9813bccaeef6b74
+      internalID: 508536932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_13
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 1166
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48b83b00dfac594593812a07957d10a
+      internalID: 1088726370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 586
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbcd6869eff258488f164813b4e0fad
+      internalID: -761141644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_15
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 586
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79f350722d68d14f875bf8f01c8178d
+      internalID: -1732750801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_16
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 586
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba8be82f095aae449690cb4dc17f1e0
+      internalID: 2059415358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb589fc5570ad74689e2d5f7d2ce4ec
+      internalID: 438483414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_18
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 6
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2490727a7e6f774b9145e81acf595b6
+      internalID: 983986056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_19
+      rect:
+        serializedVersion: 2
+        x: 2056
+        y: 6
+        width: 1028
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0157f010fd6078148954e1768388e67c
+      internalID: -1979486553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_0: -207799598
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_1: 920218830
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_10: -1344903558
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_11: 1790954604
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_12: 508536932
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_13: 1088726370
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_14: -761141644
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_15: -1732750801
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_16: 2059415358
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_17: 438483414
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_18: 983986056
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_19: -1979486553
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_2: 1004276674
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_3: 1769322169
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_4: -1754987927
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_5: 1047328458
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_6: -1426933916
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_7: 1677553622
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_8: 1021980225
+      sactx-4096x4096-BC7-mdhr_logo-9ac03534 #202465_9: 2013833174
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

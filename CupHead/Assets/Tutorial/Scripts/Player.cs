@@ -9,8 +9,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -55,13 +55,15 @@ public class Player : MonoBehaviour
     protected float timer;
     protected float timeToFloor;
 
-    private float jumpForce = 10f;
-    [SerializeField]private Transform pos;
-    [SerializeField]private float Radius;
-    [SerializeField]private LayerMask isLayer;
-    [SerializeField]private int jumpCnt;
+    //점프
+    private float jumpForce = 2f;
     public int jumpCount;
+    public Vector3[] waypoints;
+    public PathType pathType;
+    public PathMode pathMode;
+    public Color gizmoColor;
 
+    //
     private SpriteRenderer playerRenderer;
     private Rigidbody2D PR;
     private Animator animator;
@@ -73,19 +75,28 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         playerRenderer = GetComponent<SpriteRenderer>();
-        jumpCnt = jumpCount;
         instance = this;
+        DOTween.Init(false, true, LogBehaviour.ErrorsOnly);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isDead) 
+        if (isDead)
         {
             return;
         }
         #region 점프동작
-        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            /*waypoints = new Vector3[3];
+            waypoints[0] = transform.position;
+            waypoints[1] = new Vector3(transform.position.x+2 ,transform.position.y +3,0);
+            waypoints[2] = new Vector3(transform.position.x+4, transform.position.y,0);
+            pathType = PathType.CatmullRom;
+            pathMode = PathMode.TopDown2D;
+            PR.transform.DOLocalPath(waypoints, 1,pathType,pathMode);*/
+        }
         #endregion
         #region 위를올려다보는동작
         if (Input.GetKeyDown(KeyCode.UpArrow))
