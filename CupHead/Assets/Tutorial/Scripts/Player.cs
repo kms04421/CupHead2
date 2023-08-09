@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+//using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using Unity.VisualScripting;
@@ -9,6 +10,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -36,6 +38,14 @@ public class Player : MonoBehaviour
     //대시여부
     public bool isDash = false;
     public bool isDashing = false;
+    //공격여부
+    public bool isAttack = false;
+    //레이캐스트
+    public RaycastHit2D hit;
+    public float MaxDistance = 0.6f;
+    //레이캐스트 바닥
+    public GameObject foot;
+    public RaycastHit2D hitFoot; //바닥
 
 
     // Vector3 변수로 시작 위치와 종료 위치를 선언합니다.
@@ -105,6 +115,7 @@ public class Player : MonoBehaviour
         #region 공격하는 동작
         if (Input.GetKey(KeyCode.X))
         {
+            isAttack = true;
             animator.SetBool("attack",true);
         }
         if(Input.GetKeyUp(KeyCode.X))
@@ -165,7 +176,8 @@ public class Player : MonoBehaviour
         dirX = Input.GetAxis("Horizontal");
         
         
-        if (!(isDown == true || isUp == true || isAim == true || isDash == true || isGround == false))
+        if ((!(isDown == true || isUp == true || isAim == true || isDash == true || isGround == false)&& !isAttack)
+            || (isDown == false && isAim == false &&isDash ==false && isAttack) || (isDown ==true &&isAim ==false && isDash ==false && isAttack))
         {
             PR.velocity = new Vector2(dirX * speed, PR.velocity.y);
             if (dirX > 0)
@@ -183,14 +195,37 @@ public class Player : MonoBehaviour
 
         }
         #endregion
-        #region 좌우반전구현 
-        if (dirX >0)
+
+        #region 레이캐스트
+        int layerMask = 1 << LayerMask.NameToLayer("Floor");
+        Debug.DrawRay(transform.position, transform.right * MaxDistance, Color.blue, 4);
+        hit = Physics2D.Raycast(transform.position, transform.right, MaxDistance,layerMask);
+        
+
+        Debug.DrawRay(foot.transform.position, foot.transform.right * MaxDistance, Color.blue, 4);
+        hitFoot = Physics2D.Raycast(foot.transform.position, foot.transform.right, MaxDistance,layerMask);
+
+        /*if(hit.collider != null)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            Debug.LogFormat("머리쏘기{0}", hit.collider.name);
         }
-        else if(dirX<0)
+        if(hitFoot.collider != null)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            Debug.LogFormat("다리쏘기{0}", hitFoot.collider.name);
+        }*/
+        #endregion
+
+        #region 좌우반전구현 
+        if (isDash == false)
+        {
+            if (dirX > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (dirX < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
         }
         #endregion
     }
@@ -239,15 +274,44 @@ public class Player : MonoBehaviour
         Vector2 dest = new Vector2(current.x + (dashDirection * 3.5f), current.y);
         isDashing = true;
         float timeElapsed = 0.0f;
-        while (timeElapsed < 0.3f)
+        while (timeElapsed < 1f)
         {
             // 시간 경과에 따라 스케일 값 보간
-            timeElapsed += Time.deltaTime;
+            timeElapsed += Time.deltaTime*3;
 
             // Lerp 값을 0 ~ 1 사이로 변환
-            float time = Mathf.Clamp01(timeElapsed / 0.2f);
+            float time = Mathf.Clamp01(timeElapsed / 1f);
 
-            transform.position = Vector2.Lerp(current, dest, time);
+            if ((hit.collider !=null|| hitFoot.collider !=null))
+            { // 레이와 발에있는 레이가 둘중하나라도 무언가에 맞았을때
+                if ((hit.collider != null && hitFoot.collider==null) && hit.collider.tag == "Floor")
+                {   //만약 레이만 맞고 맞은게 Floor일때
+                    transform.position = Vector2.Lerp(current, new Vector2(hit.point.x, PR.velocity.y), time);
+                }
+                else if ((hit.collider == null && hitFoot.collider != null) && hit.collider.tag == "Floor")
+                {   //만약 발에있는 레이만 맞고 맞은게 Floor일때
+                    transform.position = Vector2.Lerp(current, new Vector2(hitFoot.point.x, PR.velocity.y), time);
+                }
+            }
+            else if ((hit.collider != null && hitFoot.collider != null))
+            {   //레이와 발에있는 레이가 둘다 맞았을때 
+                if (Mathf.Abs(hit.collider.transform.position.x) < Mathf.Abs(hitFoot.collider.transform.position.x))
+                { // 만약 머리에서쏜 레이의 맞은 지점의 x좌표가 발에서 쏜 레이의 맞은 지점의 x좌표보다 절대값이 작을경우 
+                    transform.position = Vector2.Lerp(current, new Vector2(hit.point.x, PR.velocity.y), time);
+                }
+                else if (Mathf.Abs(hit.collider.transform.position.x) > Mathf.Abs(hitFoot.collider.transform.position.x))
+                { // 만약 머리에서 쏜 레이의 맞은 지점의 x좌표가 발에서 쏜 레이의 맞은 지점의 x좌표보다 절대값이 클 경우
+                    transform.position = Vector2.Lerp(current, new Vector2(hitFoot.point.x, PR.velocity.y), time);
+                }
+                else if (Mathf.Abs(hit.collider.transform.position.x) == Mathf.Abs(hitFoot.collider.transform.position.x))
+                {  // 머리와 발의 레이가 맞은 지점의 x좌표 절대값이 둘다 같을떄
+                    transform.position = Vector2.Lerp(current, new Vector2(hitFoot.point.x, PR.velocity.y), time);
+                }
+            }
+            else
+            {
+                transform.position = Vector2.Lerp(current, dest, time);
+            }
             yield return null;
         }
         isDash = false;
