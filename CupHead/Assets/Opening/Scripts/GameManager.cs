@@ -10,9 +10,9 @@ using UnityEditor.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public Animator animatorTitle;
+    //public Animator animatorTitle;
     public Animator animatorPress;
-    public Animator animatorEnd;
+    //public Animator animatorEnd;
     public GameObject title;
     public GameObject Dark;
     public GameObject PressAnyKey;
@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                Debug.Log("ÂïÈù°Å´Ï");
                 PressText.SetActive(false);
                 End.SetActive(true);
             }

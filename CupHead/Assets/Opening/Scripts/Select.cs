@@ -10,7 +10,6 @@ public class Select : MonoBehaviour
     public TMP_Text exit;
 
     public GameObject startMenu;
-
     private int cursorNum = 0;
     // Start is called before the first frame update
     void Start()
@@ -85,7 +84,7 @@ public class Select : MonoBehaviour
         }
         if (cursorNum == 3 && Input.GetKeyDown(KeyCode.Return))
         {
-
+            Application.Quit();
         }
     }
 }
