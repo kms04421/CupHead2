@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour
     public GameObject Dark;
     public GameObject PressAnyKey;
     public GameObject End;
-
+    public GameObject PressText;
     private Animator animator;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         title.SetActive(false);
         Dark.SetActive(false);
         PressAnyKey.SetActive(true);
+        PressText.SetActive(true);
         animatorPress.Play("HeadMug");
     }
     // Update is called once per frame
@@ -48,6 +51,8 @@ public class GameManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
+                Debug.Log("ÂïÈù°Å´Ï");
+                PressText.SetActive(false);
                 End.SetActive(true);
             }
         }

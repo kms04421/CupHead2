@@ -19,6 +19,7 @@ public class End : MonoBehaviour
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         if (stateInfo.IsName("End") && stateInfo.normalizedTime >= 1.0f)
         {
+            Debug.Log("들어오니?");
             PressAnyKey.SetActive(false);
             Select.SetActive(true);
         }
