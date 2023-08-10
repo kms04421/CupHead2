@@ -5,48 +5,51 @@ using Unity.UI;
 using UnityEngine.InputSystem.XR.Haptics;
 using Unity.VisualScripting;
 using UnityEngine.Animations;
+using UnityEditor.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public Animator animatorTitle;
+    public Animator animatorPress;
+    public Animator animatorEnd;
     public GameObject title;
     public GameObject Dark;
     public GameObject PressAnyKey;
     public GameObject End;
+
     private Animator animator;
-
-
     // Start is called before the first frame update
     void Start()
     {
-        Instance = this;
         animator = GetComponent<Animator>();
+        Instance = this;
+        title.SetActive(true);
+        Dark .SetActive(true);
+        PressAnyKey.SetActive(false);
     }
 
+    public void OnAnimationComplete()
+    {
+        title.SetActive(false);
+        Dark.SetActive(false);
+        PressAnyKey.SetActive(true);
+        animatorPress.Play("HeadMug");
+    }
     // Update is called once per frame
     void Update()
     {
-
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Title")
-            && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >=1.0f)
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("Title") && stateInfo.normalizedTime >= 0.98f && stateInfo.normalizedTime <= 1.0f)
         {
-            title.SetActive(false);
-            Dark.SetActive(false);
-            PressAnyKey.SetActive(true);
-            //animator = GetComponent<Animator>();
+            OnAnimationComplete();
         }
-
-        bool log = animator.GetCurrentAnimatorStateInfo(0).IsName("Title");
-        Debug.LogFormat("{0}",log );
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("End")
-           && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        if (stateInfo.IsName("Title") && stateInfo.normalizedTime >= 1.1f)
         {
-
-            Debug.LogFormat(" 어디보자 ");
-            PressAnyKey.SetActive(false);
-            End.SetActive(false);
+            if (Input.anyKeyDown)
+            {
+                End.SetActive(true);
+            }
         }
-        
-      
     }
 }

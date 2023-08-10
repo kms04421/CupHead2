@@ -16,10 +16,6 @@ public class PressAnyKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown)
-        {
-            End.SetActive(true);
-            Debug.Log("??");
-        }
+      
     }
 }
