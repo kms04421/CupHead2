@@ -7,8 +7,12 @@ public class tear_Drop : MonoBehaviour
 {
     // Start is called before the first frame update
     private Animator animator;
+
+    public AudioClip die;
+    private AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -18,7 +22,7 @@ public class tear_Drop : MonoBehaviour
        if(transform.position.y < -2.5f)
         {
             animator.SetBool("Die", true);
-
+            audioSource.PlayOneShot(die);
         }
 
        if(transform.position.y < -3.35)
