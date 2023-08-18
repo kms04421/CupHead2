@@ -10,8 +10,13 @@ public class Carrot_Bomb : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private CapsuleCollider2D capsuleCollider2D;
     private Animator animator;
+
+    public AudioClip die;
+    private AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // SpriteRenderer 컴포넌트 가져오기
         spriteRenderer = GetComponent<SpriteRenderer>();
         // 플레이어 위치 잡기
@@ -45,6 +50,7 @@ public class Carrot_Bomb : MonoBehaviour
   
         if (collision.tag.Equals("Test"))
         {
+            audioSource.PlayOneShot(die);
             animator.SetBool("Die", true);
 
             StartCoroutine(DelTime());

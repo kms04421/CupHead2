@@ -20,11 +20,19 @@ public class PotatoBoss : MonoBehaviour
     int AllAtkCount = 0;
     Vector2 vector2;
 
-    private float BossHp;
+    public AudioClip Spit; // ÁøÈë
+    public AudioClip Worm; // Áö··ÀÌ
+    public AudioClip Die;
+
+
+    private AudioSource audioSource; // ¿Àµð¿À ¼Ò½º ÄÄÆ÷³ÍÆ®
+
+    private float BossHp = 100;
     // Start is called before the first frame update
     void Start()
     {
-        BossHp = 0;
+        audioSource = GetComponent<AudioSource>();
+     
         AllAtkCountList = new float[] { 0.8f, 1.3f, 1.8f};
         AtkCountList = new float[] { 0f, 0.18f, 0.5f, 0.8f, 3f } ;
         list = new List<GameObject>();
@@ -109,15 +117,18 @@ public class PotatoBoss : MonoBehaviour
         {
             case 1:
             list[0].SetActive(true);
-            StartCoroutine(rollBack(0));
+                audioSource.PlayOneShot(Spit);
+                StartCoroutine(rollBack(0));
             break;
             case 2:
             list[1].SetActive(true);
-            StartCoroutine(rollBack(1));
+                audioSource.PlayOneShot(Spit);
+                StartCoroutine(rollBack(1));
             break;
             case 3:
             list[2].SetActive(true);
-            StartCoroutine(rollBack(2));
+                audioSource.PlayOneShot(Worm);
+                StartCoroutine(rollBack(2));
             break;
         }
 
@@ -134,6 +145,7 @@ public class PotatoBoss : MonoBehaviour
 
     private IEnumerator die()
     {
+        audioSource.PlayOneShot(Die);
         yield return new WaitForSeconds(3f);
         transform.Translate(Vector3.down * 4 * Time.deltaTime);
         yield return new WaitForSeconds(3f);

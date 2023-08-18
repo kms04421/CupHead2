@@ -13,6 +13,14 @@ public class Boss2_idel : MonoBehaviour
     float[] atkCount;
     int allAtkCount = 0;
     bool cryStart = false;
+
+
+    public AudioClip die;
+    public AudioClip cry;
+
+    private AudioSource audioSource;
+
+
     // 눈물 
     public GameObject cryL;
     public GameObject cryR;
@@ -24,6 +32,9 @@ public class Boss2_idel : MonoBehaviour
     bool bossDie = false;
     void Start()
     {
+   
+        audioSource = GetComponent<AudioSource>();  
+
         tearSp = new List<GameObject>();
         for(int i=0; i < 15;i++ )
         {
@@ -48,14 +59,15 @@ public class Boss2_idel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BossHp--;
+        
         AttackTime += Time.deltaTime;
 
         if(BossHp <=0 && bossDie == false)
         {
             AttackTime = 0;
-            animator.SetTrigger("Die");  
-          
+            animator.SetTrigger("Die");
+
+            audioSource.PlayOneShot(die);
             bossDie = true;
         }
         if(bossDie && AttackTime > 3)
@@ -72,7 +84,8 @@ public class Boss2_idel : MonoBehaviour
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             if (stateInfo.IsName("Onion_die") && stateInfo.normalizedTime >= 0.9f) // 정규화된 시간이 1 이상이면 애니메이션이 종료
             {
-              
+            
+
                 animator.SetTrigger("Die2");
            
             }
@@ -93,7 +106,7 @@ public class Boss2_idel : MonoBehaviour
             }
 
         }
-
+      
         if (AttackTime < 3 && cryStart == false)
         {
             return;
@@ -117,7 +130,8 @@ public class Boss2_idel : MonoBehaviour
                 TearPosition();
                 cryL.SetActive(true);
                 cryR.SetActive(true);
-                
+                audioSource.clip = cry;
+                audioSource.Play();
             }
             if (stateInfo.IsName("Onion_Atk") && stateInfo.normalizedTime >= 1f) // 정규화된 시간이 1 이상이면 애니메이션이 종료
             {
@@ -130,6 +144,7 @@ public class Boss2_idel : MonoBehaviour
             {
                 cryL.SetActive(false);
                 cryR.SetActive(false);
+                audioSource.Stop();
                 AttackTime = 0;
                 tearSp.Reverse();
                 animator.SetBool("CryLV3", true);

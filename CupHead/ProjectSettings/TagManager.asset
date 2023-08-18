@@ -64,3 +64,9 @@ TagManager:
   - name: BcakGround_Front
     uniqueID: 282975719
     locked: 0
+  - name: Boss1
+    uniqueID: 98671535
+    locked: 0
+  - name: Boss2
+    uniqueID: 2658639221
+    locked: 0
